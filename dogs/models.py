@@ -19,11 +19,12 @@ class Breed(models.Model):
 
 class Dog(models.Model):
     name = models.CharField(max_length=250, verbose_name='Кличка')
-    breed = models.ForeignKey('dogs.Breed', on_delete=models.CASCADE, verbose_name='Порода')
+    breed = models.ForeignKey('dogs.Breed', on_delete=models.CASCADE, **NULLABLE, verbose_name='Порода')
     photo = models.ImageField(upload_to='dog_photo/', **NULLABLE, verbose_name='Фото')
     date_born = models.DateField(**NULLABLE, verbose_name='Дата рождения')
-
-    # owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, **NULLABLE, verbose_name='владелец')
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL,
+                              on_delete=models.CASCADE, **NULLABLE, verbose_name='владелец')
+    is_public = models.BooleanField(default=False)
 
     def __str__(self):
         return f'{self.name}, {self.breed}'
