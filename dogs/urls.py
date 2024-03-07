@@ -1,6 +1,7 @@
 from django.urls import path
 from rest_framework import routers
 
+from config.urls import schema_view
 from dogs.apps import DogsConfig
 from dogs.views.breed import *
 from dogs.views.dog import *

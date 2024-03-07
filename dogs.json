@@ -1,0 +1,70 @@
+[
+  {
+    "model": "dogs.breed",
+    "pk": 2,
+    "fields": {
+      "name": "Дворняжка",
+      "description": null
+    }
+  },
+  {
+    "model": "dogs.dog",
+    "pk": 1,
+    "fields": {
+      "name": "Тимка",
+      "breed": null,
+      "photo": "",
+      "date_born": null,
+      "owner": null,
+      "is_public": true
+    }
+  },
+  {
+    "model": "dogs.dog",
+    "pk": 3,
+    "fields": {
+      "name": "Бимка",
+      "breed": 2,
+      "photo": "",
+      "date_born": null,
+      "owner": null,
+      "is_public": false
+    }
+  },
+  {
+    "model": "dogs.dog",
+    "pk": 4,
+    "fields": {
+      "name": "Снежок",
+      "breed": 2,
+      "photo": "",
+      "date_born": null,
+      "owner": null,
+      "is_public": false
+    }
+  },
+  {
+    "model": "dogs.dog",
+    "pk": 5,
+    "fields": {
+      "name": "Чарли",
+      "breed": null,
+      "photo": "",
+      "date_born": null,
+      "owner": 2,
+      "is_public": false
+    }
+  },
+  {
+    "model": "dogs.dog",
+    "pk": 6,
+    "fields": {
+      "name": "собака овчарка",
+      "breed": null,
+      "photo": "",
+      "date_born": null,
+      "owner": null,
+      "is_public": false
+    }
+  }
+]

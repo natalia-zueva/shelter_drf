@@ -13,7 +13,7 @@ class UserRoles(models.TextChoices):
 class User(AbstractUser):
     username = None
 
-    email = models.EmailField(unique='True', verbose_name='Email', **NULLABLE)
+    email = models.EmailField(unique='True', verbose_name='Email')
     age = models.PositiveIntegerField(**NULLABLE)
     roles = models.CharField(max_length=9, choices=UserRoles.choices, default=UserRoles.MEMBER)
 
