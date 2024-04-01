@@ -50,9 +50,9 @@ class SetLikeToDog(APIView):
         user = get_object_or_404(User, pk=request.data.get("user"))
         dog = get_object_or_404(Dog, pk=request.data.get("dog"))
         if dog.likes.filter(id=user.id).exists():
-            return Response(f"У собаки {dog} уже есть лайк от {user}", status=200)
-        send_message_about_like(user.username)
+            return Response({"result": f"У собаки {dog} уже есть лайк от {user}"}, status=200)
+        send_message_about_like.delay(user.username)
         dog.likes.add(user)
-        return Response(f"Лайк добавлен для {dog} от {user}", status=200)
+        return Response({"result": f"Лайк добавлен для {dog} от {user}"}, status=200)
 
 

@@ -57,7 +57,6 @@ class DogDetailSerializer(serializers.ModelSerializer):
         result = response.json()
         return result.get("result")
 
-
     class Meta:
         model = Dog
         fields = ('name', 'breed', 'dog_with_same_breed', 'price_eur', 'price_usd')

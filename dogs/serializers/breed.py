@@ -9,6 +9,7 @@ class BreedSerializer(serializers.ModelSerializer):
         model = Breed
         fields = "__all__"
 
+
 class BreedListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Breed
